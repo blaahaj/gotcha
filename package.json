@@ -1,5 +1,5 @@
 {
-  "name": "gotcha",
+  "name": "@blaahaj/gotcha",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,8 @@
     "format": "prettier --write --list-different .",
     "test": "concurrently --group=true pnpm:test:\\*",
     "test:format": "prettier --check .",
-    "test:package-json": "npmPkgJsonLint ."
+    "test:package-json": "npmPkgJsonLint .",
+    "test:unit": "node --test --enable-source-maps './dist/test/*.test.js'"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,17 @@
     }
   },
   "type": "module",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./Either": "./dist/src/either.js",
+    "./Error": "./dist/src/error.js",
+    "./Option": "./dist/src/option.js",
+    "./Throw": "./dist/src/throw.js"
+  },
+  "files": [
+    "dist/src",
+    "*.md"
+  ],
   "devDependencies": {
     "@types/node": "^25.9.3",
     "concurrently": "^10.0.3",
