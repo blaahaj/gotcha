@@ -6,7 +6,9 @@
   "scripts": {
     "test": "concurrently --group=true pnpm:test:\\*",
     "format": "prettier --write --list-different .",
-    "test:format": "prettier --check ."
+    "test:format": "prettier --check .",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +22,11 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/node": "^25.9.3",
     "concurrently": "^10.0.3",
     "prettier": "^3.8.4",
     "prettier-cli": "^0.1.0",
-    "prettier-plugin-packagejson": "^3.0.2"
+    "prettier-plugin-packagejson": "^3.0.2",
+    "typescript": "^6.0.3"
   }
 }
