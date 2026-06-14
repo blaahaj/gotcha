@@ -27,6 +27,7 @@
     ".": "./dist/src/index.js",
     "./Either": "./dist/src/either.js",
     "./Error": "./dist/src/error.js",
+    "./Object": "./dist/src/object.js",
     "./Option": "./dist/src/option.js",
     "./Throw": "./dist/src/throw.js"
   },
