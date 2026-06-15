@@ -10,7 +10,7 @@ describe("Either", () => {
     it("is not right", () => assert(!isRight(v)));
 
     it("has left", () => assert.deepStrictEqual(v.left, 123));
-    // @ts-expect-error
+    // @ts-expect-error Left does not have a .right
     it("does not have right", () => v.right);
   });
 
@@ -21,7 +21,7 @@ describe("Either", () => {
     it("is not left", () => assert(!isLeft(v)));
 
     it("has right", () => assert.deepStrictEqual(v.right, 123));
-    // @ts-expect-error
+    // @ts-expect-error Right does not have a .left
     it("does not have left", () => v.left);
   });
 

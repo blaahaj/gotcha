@@ -2,7 +2,7 @@ import { describe, it } from "node:test";
 import { isErrnoException, toError } from "../src/error.js";
 import assert from "node:assert";
 import { readFile } from "node:fs/promises";
-import { isLeft, isRight, thenToEither } from "../src/either.js";
+import { isLeft, thenToEither } from "../src/either.js";
 import { constants } from "node:os";
 
 describe("Error", () => {

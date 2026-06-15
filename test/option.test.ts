@@ -16,7 +16,7 @@ describe("Option", () => {
 
     it("is none", () => assert(isNone(v)));
     it("is not some", () => assert(!isSome(v)));
-    // @ts-expect-error
+    // @ts-expect-error None does not have a value
     it("has value", () => v.value);
   });
 });

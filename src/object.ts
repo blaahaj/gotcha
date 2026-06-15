@@ -13,5 +13,6 @@ export const without = <T extends AnyObject, K extends keyof T>(
     delete copy[key];
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return copy as any;
 };
