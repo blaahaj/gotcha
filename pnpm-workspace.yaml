@@ -1,2 +1,3 @@
 minimumReleaseAgeExclude:
   - '@blaahaj/std@1.0.0'
+  - '@blaahaj/std@1.0.1'
