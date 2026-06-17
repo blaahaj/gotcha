@@ -1,6 +1,7 @@
-import { describe, it } from "node:test";
-import { without } from "../src/object.js";
 import assert from "node:assert";
+import { describe, it } from "node:test";
+
+import { without } from "../src/object.js";
 
 describe("Object", () => {
   describe("without", () => {

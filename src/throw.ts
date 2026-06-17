@@ -1,4 +1,4 @@
-import { left, right, type Either } from "./either.js";
+import { type Either, left, right } from "./either.js";
 
 export const doThrow = (error: unknown): never => {
   throw error;

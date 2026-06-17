@@ -1,7 +1,8 @@
-import { describe, it } from "node:test";
 import assert from "node:assert";
-import { doThrow, doTryCatch } from "../src/throw.js";
+import { describe, it } from "node:test";
+
 import { isLeft, isRight } from "../src/either.js";
+import { doThrow, doTryCatch } from "../src/throw.js";
 
 describe("Throw", () => {
   describe("doThrow", () => {

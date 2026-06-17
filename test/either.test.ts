@@ -1,6 +1,7 @@
-import { describe, it } from "node:test";
-import { isLeft, isRight, left, right, thenToEither } from "../src/either.js";
 import assert from "node:assert";
+import { describe, it } from "node:test";
+
+import { isLeft, isRight, left, right, thenToEither } from "../src/either.js";
 
 describe("Either", () => {
   describe("left", () => {

@@ -2,28 +2,13 @@
   "name": "@blaahaj/gotcha",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
-    "format": "prettier --write --list-different .",
-    "test": "concurrently --group=true pnpm:test:\\*",
-    "test:format": "prettier --check .",
-    "test:lint": "eslint src test",
-    "test:package-json": "npmPkgJsonLint .",
-    "test:unit": "node --test --enable-source-maps './dist/test/*.test.js'"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.6.0",
-      "onFail": "download"
-    }
-  },
-  "type": "module",
+  "author": "",
+  "files": [
+    "dist/src",
+    "*.md"
+  ],
   "exports": {
     ".": "./dist/src/index.js",
     "./Either": "./dist/src/either.js",
@@ -32,11 +17,20 @@
     "./Option": "./dist/src/option.js",
     "./Throw": "./dist/src/throw.js"
   },
-  "files": [
-    "dist/src",
-    "*.md"
-  ],
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "format": "eslint --fix --fix-type layout src test && prettier --write --list-different .",
+    "test": "concurrently --group=true pnpm:test:\\*",
+    "test:format": "prettier --check .",
+    "test:lint": "eslint src test",
+    "test:package-json": "npmPkgJsonLint .",
+    "test:unit": "node --test --enable-source-maps './dist/test/*.test.js'"
+  },
   "devDependencies": {
+    "@blaahaj/std": "^1.0.0",
     "@eslint/js": "^10.0.1",
     "@types/node": "^25.9.3",
     "concurrently": "^10.0.3",
@@ -48,5 +42,12 @@
     "prettier-plugin-packagejson": "^3.0.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.61.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "download",
+      "version": "^11.6.0"
+    }
   }
 }

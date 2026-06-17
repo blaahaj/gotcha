@@ -1,6 +1,7 @@
-import { describe, it } from "node:test";
-import { some, none, isSome, isNone } from "../src/option.js";
 import assert from "node:assert";
+import { describe, it } from "node:test";
+
+import { isNone, isSome, none, some } from "../src/option.js";
 
 describe("Option", () => {
   describe("some", () => {
