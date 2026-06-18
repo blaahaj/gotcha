@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/blaahaj/gotcha/compare/v1.0.0...v1.0.1) (2026-06-18)
+
+
+### Bug Fixes
+
+* bump for re-release ([#6](https://github.com/blaahaj/gotcha/issues/6)) ([58f2272](https://github.com/blaahaj/gotcha/commit/58f22722cce8f1feff1db5e03c73313c9bc4d7b8))
+
 ## 1.0.0 (2026-06-18)
 
 
