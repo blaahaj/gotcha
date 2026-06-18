@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@blaahaj/std": "1.0.1",
+    "@commitlint/config-conventional": "^21.0.2",
     "@eslint/js": "^10.0.1",
     "@types/node": "^25.9.3",
     "concurrently": "^10.0.3",
@@ -50,7 +51,7 @@
     "packageManager": {
       "name": "pnpm",
       "onFail": "download",
-      "version": "^11.6.0"
+      "version": "^11.8.0"
     }
   }
 }
