@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/blaahaj/gotcha/compare/v1.0.1...v1.0.2) (2026-07-22)
+
+
+### Bug Fixes
+
+* in the root export, keep the modules separate ([#9](https://github.com/blaahaj/gotcha/issues/9)) ([6ca678b](https://github.com/blaahaj/gotcha/commit/6ca678b5a81f30a6152a4ae572dfa5c020409c25))
+
 ## [1.0.1](https://github.com/blaahaj/gotcha/compare/v1.0.0...v1.0.1) (2026-06-18)
 
 
