@@ -1,5 +1,5 @@
-export * from "./either.js";
-export * from "./error.js";
-export * from "./object.js";
-export * from "./option.js";
-export * from "./throw.js";
+export * as Either from "./either.js";
+export * as Error from "./error.js";
+export * as Object from "./object.js";
+export * as Option from "./option.js";
+export * as Throw from "./throw.js";
