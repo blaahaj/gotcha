@@ -1,3 +1,4 @@
+minimumReleaseAge: 1440
 minimumReleaseAgeExclude:
-  - '@blaahaj/std@1.0.0'
-  - '@blaahaj/std@1.0.1'
+  - '@blaahaj/*'
+trustLockfile: true
