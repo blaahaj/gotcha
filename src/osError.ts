@@ -9,11 +9,6 @@ export type ErrnoException = NodeJS.ErrnoException & {
   errno: number;
 };
 
-const MESSAGE = "(error created by toError)";
-
-export const toError = (e: unknown): Error =>
-  e instanceof Error ? e : new Error(MESSAGE, { cause: e });
-
 export const isErrnoException = (e: unknown): e is ErrnoException =>
   e instanceof Error &&
   "code" in e &&

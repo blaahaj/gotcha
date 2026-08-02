@@ -4,24 +4,9 @@ import { constants } from "node:os";
 import { describe, it } from "node:test";
 
 import { isLeft, thenToEither } from "../src/either.js";
-import { isErrnoException, toError } from "../src/error.js";
+import { isErrnoException } from "../src/osError.js";
 
-describe("Error", () => {
-  describe("toError", () => {
-    it("passes an error unchanged", () => {
-      const input = new Error("bang!");
-      const output = toError(input);
-      assert.strictEqual(output, input);
-    });
-
-    it("wraps a non-error as an error", () => {
-      const input = "bang!";
-      const output = toError(input);
-      assert(output instanceof Error);
-      assert.strictEqual(output.cause, input);
-    });
-  });
-
+describe("OSError", () => {
   describe("isErrnoException", () => {
     it("handles a non-error", () => assert(!isErrnoException(123)));
 

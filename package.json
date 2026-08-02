@@ -10,11 +10,11 @@
     "*.md"
   ],
   "exports": {
-    ".": "./dist/src/index.js",
     "./Either": "./dist/src/either.js",
-    "./Error": "./dist/src/error.js",
+    "./OSError": "./dist/src/osError.js",
     "./Object": "./dist/src/object.js",
     "./Option": "./dist/src/option.js",
+    "./Result": "./dist/src/result.js",
     "./Throw": "./dist/src/throw.js"
   },
   "main": "index.js",

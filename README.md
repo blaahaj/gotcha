@@ -7,19 +7,25 @@ It's just the bare bones of FP.
 - Either
   - types: `Either`, `Left`, `Right`
   - constructors: `left`, `right`
-  - type guards: `isLeft`, `isRight`
-  - `toEither`: the `[right, left]` tuple, for use with promises (`promise.then(...toEither)`)
+  - type guards: `isLeft`, `isRight`, `.isLeft()`, `.isRight()`
+  - `try`/`catch` on some function: `tryToEither`
+  - `promise.then(...thenToEither)`: turn a resolve/reject into an Either
 - Option
   - types: `Option`, `Some`, `None`
   - constructors: `some`, `none`
-  - type guards: `isSome`, `isNone`
+  - type guards: `isSome`, `isNone`, `.isSome()`, `.isNone()`
   - singleton: `NONE`
-- Error
-  - `toError`: if something is not an `Error`, then wrap it in one
+- OSError
   - type `ErrnoException` — like `NodeJS.ErrnoException`, but with stronger typing of `.code`
   - `isErrnoException`: type guard for `ErrnoException`
+- Result
+  - types: `Result`, `OKResult`, `ErrorResult`
+  - constructors: `ok`, `error`
+  - type guards: `isOK`, `isError`, `.isOK()`, `.isError()`
+  - `try`/`catch` on some function: `tryToResult`
+  - `promise.then(...thenToResult)`: turn a resolve/reject into a Result
 - Throw
+  - `toError`: if something is not an `Error`, then wrap it in one
   - `doThrow`: `throw`, but as a function
-  - `doTryCatch`: run a function, then turn its return value / thrown error into an `Either`
 
-Imports can be done via `@blaahaj/gotcha` (for everything) or `@blaahaj/gotcha/Either`, etc.
+Imports are via `@blaahaj/gotcha/Either`, etc.
