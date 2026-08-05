@@ -1,13 +1,8 @@
-import { type Either, left, right } from "./either.js";
+const MESSAGE = "(error created by toError)";
+
+export const toError = (e: unknown): Error =>
+  e instanceof Error ? e : new Error(MESSAGE, { cause: e });
 
 export const doThrow = (error: unknown): never => {
   throw error;
-};
-
-export const doTryCatch = <T>(fn: () => T): Either<T, unknown> => {
-  try {
-    return right(fn());
-  } catch (error) {
-    return left(error);
-  }
 };

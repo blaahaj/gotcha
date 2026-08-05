@@ -1,33 +1,29 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
 
-import { isLeft, isRight } from "../src/either.js";
-import { doThrow, doTryCatch } from "../src/throw.js";
+import { doThrow, toError } from "../src/throw.js";
+
+const anError = new Error("bang!");
 
 describe("Throw", () => {
-  describe("doThrow", () => {
-    it("throws the given value", () => {
-      const error = new Error("bang!");
-      assert.throws(() => doThrow(error), error);
+  describe("toError", () => {
+    it("passes an error unchanged", () => {
+      const input = new Error("bang!");
+      const output = toError(input);
+      assert.strictEqual(output, input);
+    });
+
+    it("wraps a non-error as an error", () => {
+      const input = "bang!";
+      const output = toError(input);
+      assert(output instanceof Error);
+      assert.strictEqual(output.cause, input);
     });
   });
 
-  describe("doTryCatch", () => {
-    it("returns", () => {
-      const either = doTryCatch(() => 123);
-
-      assert(isRight(either));
-      assert.deepStrictEqual(either.right, 123);
-    });
-
-    it("throws", () => {
-      const error = new Error("bang!");
-      const either = doTryCatch(() => {
-        throw error;
-      });
-
-      assert(isLeft(either));
-      assert.equal(either.left, error);
+  describe("doThrow", () => {
+    it("throws the given value", () => {
+      assert.throws(() => doThrow(anError), anError);
     });
   });
 });
