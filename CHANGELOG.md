@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/blaahaj/gotcha/compare/v1.0.2...v2.0.0) (2026-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove the module-top-level export
+
+### Features
+
+* add Result ([904dd02](https://github.com/blaahaj/gotcha/commit/904dd025f54d229575ca3932e86cac121296180e))
+* make predicates (isLeft etc) available as methods too ([#11](https://github.com/blaahaj/gotcha/issues/11)) ([904dd02](https://github.com/blaahaj/gotcha/commit/904dd025f54d229575ca3932e86cac121296180e))
+
+
+### Bug Fixes
+
+* remove the module-top-level export ([904dd02](https://github.com/blaahaj/gotcha/commit/904dd025f54d229575ca3932e86cac121296180e))
+* split out the NodeJS-specific part to 'OSError' ([904dd02](https://github.com/blaahaj/gotcha/commit/904dd025f54d229575ca3932e86cac121296180e))
+
 ## [1.0.2](https://github.com/blaahaj/gotcha/compare/v1.0.1...v1.0.2) (2026-07-22)
 
 
