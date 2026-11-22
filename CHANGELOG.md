@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/blaahaj/gotcha/compare/v2.0.0...v2.1.0) (2026-11-22)
+
+
+### Features
+
+* add OSFile ([#13](https://github.com/blaahaj/gotcha/issues/13)) ([1921243](https://github.com/blaahaj/gotcha/commit/19212436df4bb28cc651881a84f072875e78f747))
+
 ## [2.0.0](https://github.com/blaahaj/gotcha/compare/v1.0.2...v2.0.0) (2026-08-05)
 
 
