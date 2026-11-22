@@ -1,8 +1,9 @@
 import { toError } from "./throw.js";
+import type { TypeGuard } from "./typeGuard.js";
 import { isFalse, isTrue } from "./util.js";
 
 export type ErrorResult<E extends Error = Error> = {
-  readonly error: Error;
+  readonly error: E;
   readonly isError: () => this is ErrorResult<E>;
   readonly isOK: () => this is never;
 };
@@ -19,9 +20,9 @@ export const error = <E extends Error = Error>(value: E): ErrorResult<E> =>
   ({
     tag: "error",
     error: value,
-    isError: isTrue as ErrorResult["isError"],
-    isOK: isFalse as ErrorResult["isOK"],
-  }) as ErrorResult;
+    isError: isTrue as ErrorResult<E>["isError"],
+    isOK: isFalse as ErrorResult<E>["isOK"],
+  }) as ErrorResult<E>;
 
 export const ok = <T>(value: T): OKResult<T> =>
   ({
@@ -38,6 +39,11 @@ export const isOK = <T, E extends Error = Error>(
   result: Result<T, E>,
 ): result is OKResult<T> => result.isOK();
 
+export const isErrorWhich =
+  <E extends Error = Error, N extends E = E>(typeGuard: TypeGuard<E, N>) =>
+  <T>(result: Result<T, E>): result is ErrorResult<N> =>
+    result.isError() && typeGuard(result.error);
+
 export const tryToResult = <T>(fn: () => T): Result<T, Error> => {
   try {
     return ok(fn());
@@ -46,7 +52,6 @@ export const tryToResult = <T>(fn: () => T): Result<T, Error> => {
   }
 };
 
-// promise.then(ok, error)
 // promise.then(...thenToResult)
 export const thenToResult = [
   ok,

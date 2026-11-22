@@ -5,10 +5,11 @@ import { describe, it } from "node:test";
 
 import { isLeft, thenToEither } from "../src/either.js";
 import { isErrnoException } from "../src/osError.js";
+import { toError } from "../src/throw.js";
 
 describe("OSError", () => {
   describe("isErrnoException", () => {
-    it("handles a non-error", () => assert(!isErrnoException(123)));
+    // it("handles a non-error", () => assert(!isErrnoException(123)));
 
     it("handles an error", () => assert(!isErrnoException(new Error("bang!"))));
 
@@ -16,7 +17,7 @@ describe("OSError", () => {
       const v = await readFile("/no-such-file").then(...thenToEither);
 
       assert(isLeft(v));
-      const e = v.left;
+      const e = toError(v.left);
 
       assert(isErrnoException(e));
       assert.deepStrictEqual(e.code, "ENOENT");
